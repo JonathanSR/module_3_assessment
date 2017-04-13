@@ -1,0 +1,10 @@
+<div><p3><%=@stores.count%> Total Stores Returned For Your Search</p3>
+<p4>Results Below:</p4>
+  <%@stores.each do |store|%>
+    <%=store.name%>
+    <%=store.city%>
+    <%=store.distance%>
+    <%=store.phone%>
+    <%=store.type%> </br>
+  <%end%>
+</div>

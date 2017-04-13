@@ -9,11 +9,11 @@ describe BestBuy do
       expect(stores).to be_a(Array)
       expect(stores.count).to eq(10)
 
-      expect(store.name).to be_truthy
-      expect(store.city).to be_truthy
-      expect(store.distance).to be_truthy
-      expect(store.phone).to be_truthy
-      expect(store.type).to be_truthy
+      expect(store.name).to eq("BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER")
+      expect(store.city).to eq("DENVER")
+      expect(store.distance).to eq(3.45)
+      expect(store.phone).to eq("303-270-9189")
+      expect(store.type).to eq("Mobile SAS")
     end
   end
 end

@@ -10,17 +10,14 @@ describe "user visits root path" do
       click_on "search"
 
       expect(current_path).to eq("/search")
+      expect(page).to have_content("BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER")
+      expect(page).to have_content("DENVER")
+      expect(page).to have_content("3.45")
+      expect(page).to have_content("303-270-9189")
+      expect(page).to have_content("Mobile SAS")
       
       # expect(page).to have_content("16 Total Stores")
-      # expect(results).to eq(10)
-      # expect(stores)
-      # expect(long name)
-      # expect(city)
-      # expect(distance)
-      # expect(phone number)
-      # expect(store type)
-
-      
+  
       # And I should see stores within 25 miles of 80202
       # And I should see a message that says "16 Total Stores"
       # And I should see exactly 10 results
