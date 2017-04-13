@@ -42,12 +42,12 @@ describe "items api endpoints" do
 
     it "creates a new item" do
       params = {name: "computer", description:"cool", image_url:"apple.jpg"}
-      post "/api/v1/items", params: {item: params} 
-
+      post api_v1_items_path,{item: params} 
       
       item = JSON.parse(response.body, symbolize_name: true)
-      expect(response).to be_success
 
+      byebug
+      expect(response).to be_success
       expect(item[:name]).to eq("computer")
       expect(item).to have_key(:name)
       expect(item).to have_key(:description)
