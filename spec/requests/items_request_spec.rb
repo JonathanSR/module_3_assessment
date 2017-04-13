@@ -41,8 +41,8 @@ describe "items api endpoints" do
     end
 
     it "creates a new item" do
-      params = {name: "computer", description:"cool", image_url:"apple.jpg"}
-      post api_v1_items_path,{item: params} 
+      params = {name:"computer", description:"cool", image_url:"apple.jpg"}
+      post api_v1_items_path, params: {item: params} 
       
       item = JSON.parse(response.body, symbolize_name: true)
 
