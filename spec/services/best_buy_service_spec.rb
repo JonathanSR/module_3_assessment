@@ -8,13 +8,13 @@ describe BestBuyService do
       store = stores[0]
 
       expect(stores).to be_a(Array)
-      expect(stores.count).to eq(16)
+      expect(stores.count).to eq(10)
 
-      # expect(long name).to be_truthy
-      # expect(city).to be_truthy
-      # expect(distance).to be_truthy
-      # expect(phone number).t0 be_truthy
-      # expect(store type).to be_truthy
+      expect(store[:longName]).to be_truthy
+      expect(store[:city]).to be_truthy
+      expect(store[:distance]).to be_truthy
+      expect(store[:phone]).to be_truthy
+      expect(store[:storeType]).to be_truthy
     end
   end
 end
