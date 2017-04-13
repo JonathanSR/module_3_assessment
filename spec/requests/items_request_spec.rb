@@ -21,14 +21,22 @@ describe "items api endpoints" do
     end
 
     it "returns a single item" do
-      get api_v1_item(@item1)
+      get api_v1_item_path(@item1)
 
-      destination = JSON.parse(response.body, symbolize_names: true)
+      item = JSON.parse(response.body, symbolize_names: true)
       expect(response).to be_success
 
-      expect(destination[:name]).to eq(destination1.name)
-      expect(destination[:name]).to eq(destination1.name)
-      expect(destination[:name]).to eq(destination1.name)
-      expect(destination[:name]).to eq(destination1.name)
-      
+      expect(item[:name]).to eq(@item1.name)
+      expect(item[:description]).to eq(@item1.description)
+      expect(item[:image_url]).to eq(@item1.image_url)
+    end
+
+    it "deletes a single item" do
+      expect(Item.count).to eq(3)
+
+      delete api_v1_item_path(@item1)
+
+      expect(response).to be_success
+      expect(Item.count).to eq(2)
+    end 
   end
