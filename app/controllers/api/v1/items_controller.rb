@@ -1,12 +1,13 @@
 class Api::V1::ItemsController < ApplicationController
-  #skip_before_action :verify_authenticity_token 
+  skip_before_action :verify_authenticity_token 
 
   def index
-    render json: Item.all
+    @items = Item.all
+    render json: @items.map {|item| {name: item.name, description: item.description, image_url: item.image_url}}
   end
 
   def show
-    render json: Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 
   def destroy
